@@ -40,7 +40,7 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public List<Vehicle> getVehiclesByPrice(double min, double max) {
+    public  List<Vehicle> getVehiclesByPrice(double min, double max) {
         List<Vehicle> matchingVehicles = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
             if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
@@ -110,5 +110,15 @@ public class Dealership {
 
     public void removeVehicle(Vehicle vehicle) {
         inventory.remove(vehicle);
+    }
+
+    @Override
+    public String toString() {
+        return "Dealership{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", inventory=" + inventory +
+                '}';
     }
 }
